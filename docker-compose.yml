@@ -1,9 +1,8 @@
 version: "3.9"
 services:
   crawl4ai:
-    image: unclecode/crawl4ai:latest
+    image: uncle_code/crawl_for_ai:basic-amd64   # лёгкий образ
     restart: unless-stopped
-    # Timeweb понимает 8080 как внутренний порт сервиса
     ports:
       - "8080:8080"
     environment:
