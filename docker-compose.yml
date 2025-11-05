@@ -3,8 +3,10 @@ services:
   crawl4ai:
     image: unclecode/crawl4ai:latest
     restart: unless-stopped
+    # Timeweb понимает 8080 как внутренний порт сервиса
     ports:
       - "8080:8080"
     environment:
       CRAWL_FOR_AI_API_TOKEN: ${CRAWL_FOR_AI_API_TOKEN}
-    shm_size: "1g"   # важно для headless-браузера
+      PORT: 8080
+    shm_size: "1g"
