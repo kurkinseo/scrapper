@@ -1,11 +1,10 @@
 services:
   crawl4ai:
-    image: uncle_code/crawl_for_ai:basic-amd64
+    image: unclecode/crawl4ai:latest
     restart: unless-stopped
     environment:
       PORT: 11235
-      # включишь токен при желании:
-    CRAWL_FOR_AI_API_TOKEN: ${CRAWL_FOR_AI_API_TOKEN}
+      CRAWL_FOR_AI_API_TOKEN: ${CRAWL_FOR_AI_API_TOKEN}
     ports:
       - "11235:11235"
     shm_size: "1g"
