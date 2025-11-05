@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  crawl4ai:
+    image: unclecode/crawl4ai:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      CRAWL_FOR_AI_API_TOKEN: ${CRAWL_FOR_AI_API_TOKEN}
+    shm_size: "1g"   # важно для headless-браузера
