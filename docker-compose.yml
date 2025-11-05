@@ -1,11 +1,11 @@
 version: "3.9"
 services:
   crawl4ai:
-    image: uncle_code/crawl_for_ai:basic-amd64   # лёгкий образ
+    image: unclecode/crawl4ai:latest   # можно заменить на uncle_code/crawl_for_ai:basic-amd64 если мало RAM
     restart: unless-stopped
     ports:
-      - "8080:8080"
+      - "8080:8080"        # внешний 8080 -> внутренний 8080
     environment:
       CRAWL_FOR_AI_API_TOKEN: ${CRAWL_FOR_AI_API_TOKEN}
       PORT: 8080
-    shm_size: "1g"
+    shm_size: "1g"         # нужно для headless-браузера
